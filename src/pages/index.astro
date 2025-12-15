@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="Home">
+
+	<div>
+		<h2 class="text-2xl font-bold">We're building a family company.</h2>
+		<p class="text-2xl">A collective home of businesses, projects, and creative works.</p>
+	</div>
+
+	<div class="mt-10">
+		<p>If you've landed here, you've probably found us through one of our trading names:</p>
+	</div>
+
+	
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+  <div class="bg-gray-100 rounded-lg p-6 flex flex-col h-full">
+    <h3 class="text-l font-semibold mb-2">Field Guide</h3>
+    <p class="text-gray-600">Strategy for the real world — designed with the people who make it happen.</p>
+    <div class="flex-grow"></div>
+    <a href="https://fieldguideoutpost.com" class="mt-4 block hover:underline self-start">&rarr; fieldguideoutpost.com</a>
+  </div>
+  <div class="bg-gray-100 rounded-lg p-6 flex flex-col h-full">
+    <h3 class="text-l font-semibold mb-2">Root Academy</h3>
+    <p class="text-gray-600">Songwriting academy for young musicians and songwriters.</p>
+    <div class="flex-grow"></div>
+    <a href="https://bethgoudie.my.canva.site/" class="mt-4 block hover:underline self-start">&rarr; bethgoudie.co.uk</a>
+  </div>
+  <div class="bg-gray-100 rounded-lg p-6 flex flex-col h-full">
+    <h3 class="text-l font-semibold mb-2">Morning Chorus Records</h3>
+    <p class="text-gray-600">Music for the new day. Artist owned by The Goudies.</p>
+    <div class="flex-grow"></div>
+    <a href="https://morningchorusrecords.com" class="mt-4 block hover:underline self-start">&rarr; morningchorusrecords.com</a>
+  </div>
+  <div class="bg-gray-100 rounded-lg p-6 flex flex-col h-full">
+    <h3 class="text-l font-semibold mb-2">The Goudies</h3>
+    <p class="text-gray-600">Folk-country harmony duo & songwriting partners.</p>
+    <div class="flex-grow"></div>
+    <a href="https://thegoudies.com" class="mt-4 block hover:underline self-start">&rarr; thegoudies.com</a>
+  </div>
+</div>
+</BaseLayout>
+
+

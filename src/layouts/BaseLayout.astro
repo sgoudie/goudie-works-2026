@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import mcrLogo from "../assets/mcr_logo_orange_fill.svg";
+import mcrRoundal from "../assets/mcr_favicon.svg";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `${title} | Goudie Works` : "Goudie Works"}</title>
+  </head>
+  <body class="font-sans bg-white text-gray-900">
+
+    <header class="p-4 mb-8">
+      <nav class="max-w-4xl mx-auto flex justify-between">
+        <a href="/">
+            <h1 class="text-2xl font-bold uppercase">Goudie Works</h1>
+        </a>
+      </nav>
+    </header>
+
+    <div class="p-4">
+      <main class="max-w-4xl mx-auto">
+        <slot />
+      </main>
+    </div>
+   
+
+    <footer class="p-4 text-sm text-gray-500 mt-20">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col gap-2">
+                <div>
+                    <p>© {new Date().getFullYear()} <a href="https://goudieworks.co" class="hover:underline">Goudie Works Ltd</a></p>
+                    <p>Registered Office: c/o Rabble Studio, 103 Bute Street, Cardiff, CF10 5AD</p>
+                    <p>Company number 11656551. VAT Number 429631581.</p>
+                    <p>Registered in England and Wales. All rights reserved.</p>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+  </body>
+</html>
