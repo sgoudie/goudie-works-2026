@@ -1,4 +1,4 @@
-# MCR 2025
+# Goudie Works 2026
 The website for Goudie Works - built with Astro in 2025. 
 
 ## Astro
