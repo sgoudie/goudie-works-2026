@@ -16,9 +16,14 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env*
 
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
+
+# Vercel prebuilt output — never commit. If committed, Vercel skips the
+# real build (astro build) and serves stale prebuilt files.
+.vercel
