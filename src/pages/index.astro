@@ -1,6 +1,44 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+import fieldguide from "../assets/fieldguide.png";
+import mcr from "../assets/mcr.jpg";
+import thegoudies from "../assets/thegoudies.jpg";
+import hymnal from "../assets/hymnal.png";
+
+const works = [
+	{
+		name: "Field Guide",
+		description: "Strategy for the real world — designed with the people who make it happen.",
+		image: fieldguide,
+		alt: "Field Guide F/G logo",
+		url: "https://fieldguideoutpost.com",
+		domain: "fieldguideoutpost.com",
+	},
+	{
+		name: "Morning Chorus Records",
+		description: "Music for the new day. Artist owned by The Goudies.",
+		image: mcr,
+		alt: "Morning Chorus Records roundal, est. 2021",
+		url: "https://morningchorusrecords.com",
+		domain: "morningchorusrecords.com",
+	},
+	{
+		name: "The Goudies",
+		description: "Folk-country harmony duo — recording and performing artists.",
+		image: thegoudies,
+		alt: "Folk-country duo Sam and Beth Goudie sitting together on a stage",
+		url: "https://thegoudies.com",
+		domain: "thegoudies.com",
+	},
+	{
+		name: "Hymnal",
+		status: "In Development",
+		description: "An app for psalmists — to collect, organise, and lead songs for worship and liturgy.",
+		image: hymnal,
+		alt: "Hymnal app icon",
+	},
+];
 ---
 
 <BaseLayout title="Home">
@@ -11,31 +49,29 @@ import { Image } from "astro:assets";
 	</div>
 
 	<div class="mt-10">
-		<p>If you've landed here, you've probably found us through one of our trading names:</p>
+		<p>If you've landed here, you've probably found us through one of our trading names or projects.</p>
 	</div>
 
-	
-
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
-  <div class="bg-gray-100 rounded-lg p-6 flex flex-col h-full">
-    <h3 class="text-l font-semibold mb-2">Field Guide</h3>
-    <p class="text-gray-600">Strategy for the real world — designed with the people who make it happen.</p>
-    <div class="flex-grow"></div>
-    <a href="https://fieldguideoutpost.com" class="mt-4 block hover:underline self-start">&rarr; fieldguideoutpost.com</a>
-  </div>
-  <div class="bg-gray-100 rounded-lg p-6 flex flex-col h-full">
-    <h3 class="text-l font-semibold mb-2">Morning Chorus Records</h3>
-    <p class="text-gray-600">Music for the new day. Artist owned by The Goudies.</p>
-    <div class="flex-grow"></div>
-    <a href="https://morningchorusrecords.com" class="mt-4 block hover:underline self-start">&rarr; morningchorusrecords.com</a>
-  </div>
-  <div class="bg-gray-100 rounded-lg p-6 flex flex-col h-full">
-    <h3 class="text-l font-semibold mb-2">The Goudies</h3>
-    <p class="text-gray-600">Folk-country harmony duo & songwriting partners.</p>
-    <div class="flex-grow"></div>
-    <a href="https://thegoudies.com" class="mt-4 block hover:underline self-start">&rarr; thegoudies.com</a>
-  </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+  {works.map((work) => (
+    <div class="flex flex-col h-full">
+      {work.url ? (
+        <a href={work.url}>
+          <Image src={work.image} alt={work.alt} width={500} height={500} class="w-full h-auto rounded-md mb-4" />
+        </a>
+      ) : (
+        <Image src={work.image} alt={work.alt} width={500} height={500} class="w-full h-auto rounded-md mb-4" />
+      )}
+      <h3 class="text-l font-semibold mb-2">
+        {work.name}
+        {work.status && <span class="ml-1 align-middle inline-block rounded bg-gray-100 px-1.5 py-0.5 text-xs font-medium uppercase tracking-wide text-gray-600">{work.status}</span>}
+      </h3>
+      <p class="text-gray-600">{work.description}</p>
+      <div class="flex-grow"></div>
+      {work.url && (
+        <a href={work.url} class="mt-4 block text-sm hover:underline self-start">&rarr; {work.domain}</a>
+      )}
+    </div>
+  ))}
 </div>
 </BaseLayout>
-
-
